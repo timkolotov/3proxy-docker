@@ -35,9 +35,6 @@ elif [ $(wc -l < /etc/3proxy/passwd) -eq 1 ]; then
     # hm...
     USER=$(cat /etc/3proxy/passwd | awk -F ":CL:" '{ print $1 }')
     PASS=$(cat /etc/3proxy/passwd | awk -F ":CL:" '{ print $2 }')
-    #IFS=':' read -ra CREDENTIALS < /etc/3proxy/passwd
-    #USER="${CREDENTIALS[0]}"
-    #PASS="${CREDENTIALS[2]}"
 fi
 
 # print some information

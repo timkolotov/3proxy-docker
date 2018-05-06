@@ -7,7 +7,6 @@ RUN echo -e '@testing http://nl.alpinelinux.org/alpine/edge/testing' >> /etc/apk
 COPY ./3proxy.cfg.tpl /etc/3proxy.cfg.tpl
 COPY ./entrypoint.sh /opt/entrypoint.sh
 
-EXPOSE 8080
-EXPOSE 1080
+EXPOSE 8080 1080
 
 ENTRYPOINT ["/opt/entrypoint.sh"]
