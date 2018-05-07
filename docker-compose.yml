@@ -1,0 +1,15 @@
+version: '2'
+
+services:
+  3proxy:
+    image: timkolotov/3proxy-docker
+    container_name: 3proxy
+    restart: always
+    environment:
+      - HTTP_PORT=8080
+      - SOCKS_PORT=1080
+    volumes:
+       - ./passwd:/etc/3proxy/passwd:ro
+    ports:
+      - "1080:1080"
+      - "8080:8080"
