@@ -13,7 +13,6 @@ fi
 # copy config template and replace variables (only first run)
 cp -u /etc/3proxy.cfg.tpl /etc/3proxy.cfg && grep -q "__INET__" /etc/3proxy.cfg
 if [ $? -eq 0 ]; then
-    echo "a"
     sed -i 's/__INET__/'"$(hostname -i)"'/g' /etc/3proxy.cfg
     sed -i 's/__HTTP_PORT__/'"$HTTP_PORT"'/g' /etc/3proxy.cfg
     sed -i 's/__SOCKS_PORT__/'"$SOCKS_PORT"'/g' /etc/3proxy.cfg
