@@ -1,9 +1,9 @@
 # 3proxy-docker
-Lightweight docker image with tiny 3proxy server. This configuration not has any restrictions of traffic.
+Lightweight docker image with tiny 3proxy server. This configuration doesn't have any restrictions on traffic.
 
 
 ### Very simple usage
-When USER and PASS not specified, it will be create user with random password. You should see credentials in logs.
+When USER and PASS are not specified, it will create a user with a random password. You will see the credentials in the logs.
 ```console
 docker pull timkolotov/3proxy-docker
 docker run -d --restart always -p 1080:1080 -p 8080:8080 --name 3proxy timkolotov/3proxy-docker
@@ -11,13 +11,13 @@ docker logs 3proxy
 ```
 
 ### Simple usage
-Run container with specified user and password
+Run a container with a specified user and password
 ```console
 docker run -d --restart always -p 1080:1080 -p 8080:8080 -e USER=userName -e PASS=secretPass --name 3proxy timkolotov/3proxy-docker
 ```
 
 ### Multiple users
-Before run container, you should create passwd file with 3proxy users. This file has format:
+Before running a container, you must create a passwd file with 3proxy users. This file has the following format:
 ```
 userName1:CL:secretPass1
 userName2:CL:secretPass2
